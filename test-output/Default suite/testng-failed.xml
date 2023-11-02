@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Default test(failed)">
+    <classes>
+      <class name="com.wordpress.admin.Admin_01_Post">
+        <methods>
+          <include name="Post_02_Search_And_View_Post"/>
+          <include name="afterClass"/>
+          <include name="Post_04_Delete_Post"/>
+          <include name="Post_01_Create_New_Post"/>
+          <include name="Post_03_Edit_Post"/>
+          <include name="beforeClass"/>
+          <include name="deleteFileInReport"/>
+        </methods>
+      </class> <!-- com.wordpress.admin.Admin_01_Post -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

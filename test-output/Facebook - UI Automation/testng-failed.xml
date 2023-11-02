@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Facebook - UI Automation]" guice-stage="DEVELOPMENT">
+  <parameter name="url" value="https://www.facebook.com/"/>
+  <listeners>
+    <listener class-name="commons.MethodListener"/>
+    <listener class-name="reportConfig.AllureTestListener"/>
+  </listeners>
+  <test thread-count="5" name="Run on Chrome(failed)">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="com.facebook.home.Level_20_Element_Undisplayed">
+        <methods>
+          <include name="Home_03_Element_Undisplayed_NOT_In_HTML_02"/>
+          <include name="Home_02_Element_Undisplayed_In_HTML"/>
+          <include name="beforeClass"/>
+          <include name="afterClass"/>
+          <include name="deleteFileInReport"/>
+        </methods>
+      </class> <!-- com.facebook.home.Level_20_Element_Undisplayed -->
+    </classes>
+  </test> <!-- Run on Chrome(failed) -->
+</suite> <!-- Failed suite [Facebook - UI Automation] -->
