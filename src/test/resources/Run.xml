@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite parallel="none" name="NopCommerce - UI Automation">
-	<parameter name="userUrl" value="https://demo.nopcommerce.com/" />
-	<parameter name="adminUrl" value="https://admin-demo.nopcommerce.com" />
+<suite parallel="none" name="OrangeHRM - UI Automation">
+	<parameter name="url" value="http://localhost/orangehrm-5.5/web/index.php/auth/login" />
 
 	<listeners>
 		<listener class-name="commons.MethodListener" />
@@ -11,18 +10,9 @@
 
 	<test name="Run on Chrome" preserve-order="true">
 		<parameter name="browser" value="chrome" />
-		<!-- Run with Share/ Cookie
- 	<classes>
-      <class name="com.nopcommerce.cookie.Common_Register"/>
-      <class name="com.nopcommerce.cookie.Order"/>
-      <class name="com.nopcommerce.cookie.Product_Detail"/>
-      <class name="com.nopcommerce.cookie.Payment"/>
-    </classes>
-    -->
 		<classes>
 			<class
-				name="com.nopcommerce.user.Level_16_Log" />
+				name="PIM.Add_Employee" />
 		</classes>
-
 	</test>
 </suite>
