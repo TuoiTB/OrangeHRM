@@ -119,8 +119,8 @@ public class Add_Employee extends BaseTest {
 		log.info("PIM_01 - Step 19: Verify Employee id is displayed.");
 		verifyEquals(persionalDetailPage.getEmployeeId(),employeeId);
 
-		/*log.info("PIM_01 - Step 20: Verify Avatar is displayed.");
-		verifyTrue(persionalDetailPage.isAvatarDisplayed());*/
+		log.info("PIM_01 - Step 20: Verify Avatar is displayed.");
+		//verifyTrue(persionalDetailPage.isAvatarDisplayed());
 
 	}
 	
