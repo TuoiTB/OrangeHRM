@@ -524,17 +524,8 @@ public class BasePage {
 	public Alert waitForAlertPresence(WebDriver driver) {
 		return new WebDriverWait(driver, Duration.ofSeconds(longTimeout)).until(ExpectedConditions.alertIsPresent());
 	}
-	public void uploadMultipleFiles(WebDriver driver, String...fileNames) {
-		String filePath = System.getProperty("user.dir") + "\\uploadFiles\\";
-		String fullFileName = "";
-		for(String file : fileNames) {
-			fullFileName = fullFileName + filePath + file + "\n";
-		}
-		fullFileName = fullFileName.trim();
-		getElement(driver, UPLOAD_FILE_TYPE).sendKeys(fullFileName);
-	}
+
 	
 	private long longTimeout = GlobalConstants.LONG_TIMEOUT;
 	private long shortTimeout = GlobalConstants.SHORT_TIMEOUT;
-	private String UPLOAD_FILE_TYPE = "xpath=//input[@type='file']";
 }

@@ -6,15 +6,12 @@ import io.qameta.allure.Description;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.devtools.v85.page.Page;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-import pageObjects.*;
 import utitlities.DataFaker;
 
 @Epic("Account")
@@ -22,32 +19,24 @@ import utitlities.DataFaker;
 public class Add_Employee extends BaseTest {
 
 	private WebDriver driver;
-	private String userNameLogin = "automationfc";
-	private String passwordLogin = "Auto123456@";
-
+	
 	DataFaker faker;
 	private String firstName;
-	private String middleName;
 	private String lastName;
-	private String userName;
 	private String password;
-	private String employeeId;
-	private String avatarFileName;
+	private String emailAddress;
 	
 	@Parameters({"browser","url"})
 	@BeforeClass
 	public void beforeClass(String browserName, String url) {
 		driver = getBrowserDriver(browserName, url);
-		loginPage = PageGeneratorManager.getLoginPage(driver);
-		loginPage.loginToSystem(userNameLogin,passwordLogin);
-
+		/*homePage = PageGeneratorManager.getHomePage(driver);
+		registerPage = PageGeneratorManager.getRegisterPage(driver);
 		faker = DataFaker.getDataFaker();
 		firstName = faker.getFirstName();
-		middleName = faker.getMiddleName();
 		lastName = faker.getLastName();
-		userName = faker.getEmailAddress();
-		password = "JctVn@1#TTT";
-		avatarFileName = "JCT.jpg";
+		password = faker.getPassword();
+		emailAddress = faker.getEmailAddress();*/
 	}
 	@Description("TC_01")
 	@Story("Add Employee")
@@ -121,18 +110,11 @@ public class Add_Employee extends BaseTest {
 
 		log.info("PIM_01 - Step 20: Verify Avatar is displayed.");
 		//verifyTrue(persionalDetailPage.isAvatarDisplayed());
-
-	}
 	
 
 	@AfterClass(alwaysRun = true)
 	public void afterClass() {
-		//quitBrowserDriver();
+		quitBrowserDriver();
 	}
 
-	LoginPageObject loginPage;
-	DashBoardPageObject dashBoardPage;
-	EmployeeListPageObject employeeListPage;
-	AddEmployeePageObject addEmployeePage;
-	PersionalDetailPageObject persionalDetailPage;
 }
