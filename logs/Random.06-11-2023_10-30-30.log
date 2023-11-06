@@ -1,0 +1,15 @@
+[06-11-2023 10:30:39.543 INFO PIM.Add_Employee] - PIM_01 - Step 01: Open PIM link at menu
+[06-11-2023 10:30:43.226 INFO PIM.Add_Employee] - PIM_01 - Step 02: Click Add button
+[06-11-2023 10:30:44.829 INFO PIM.Add_Employee] - PIM_01 - Step 03: Fill in First Name
+[06-11-2023 10:30:45.433 INFO PIM.Add_Employee] - PIM_01 - Step 04: Fill in Middle Name
+[06-11-2023 10:30:45.605 INFO PIM.Add_Employee] - PIM_01 - Step 05: Fill in Last Name
+[06-11-2023 10:30:45.792 INFO PIM.Add_Employee] - PIM_01 - Step 06: Get value of Employee id
+[06-11-2023 10:30:45.863 INFO PIM.Add_Employee] - PIM_01 - Step 07: On Create Login Details toggle
+[06-11-2023 10:30:46.242 INFO PIM.Add_Employee] - PIM_01 - Step 08: Fill in User Name
+[06-11-2023 10:30:46.498 INFO PIM.Add_Employee] - PIM_01 - Step 09: Choose Status radio button
+[06-11-2023 10:30:46.608 INFO PIM.Add_Employee] - PIM_01 - Step 10: Fill in Password
+[06-11-2023 10:30:46.772 INFO PIM.Add_Employee] - PIM_01 - Step 11: Fill in Confirm Password
+[06-11-2023 10:30:46.959 INFO PIM.Add_Employee] - PIM_01 - Step 12: Upload Avatar and verify uploaded successed
+[06-11-2023 10:30:47.121 INFO PIM.Add_Employee] - ----------FAILED----------
+[06-11-2023 10:30:47.122 INFO PIM.Add_Employee] - PIM_01 - Step 13: Click Save button
+[06-11-2023 10:30:47.230 INFO PIM.Add_Employee] - PIM_01 - Step 14: Verify Toast message is displayed with content Successfully Saved

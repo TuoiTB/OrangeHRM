@@ -1,0 +1,7 @@
+[06-11-2023 09:31:17.196 INFO PIM.Add_Employee] - PIM_01 - Step 01: Open PIM link at menu
+[06-11-2023 09:31:20.989 INFO PIM.Add_Employee] - PIM_01 - Step 02: Click Add button
+[06-11-2023 09:31:22.710 INFO PIM.Add_Employee] - PIM_01 - Step 03: Fill in First Name
+[06-11-2023 09:31:23.322 INFO PIM.Add_Employee] - PIM_01 - Step 04: Fill in Middle Name
+[06-11-2023 09:31:23.513 INFO PIM.Add_Employee] - PIM_01 - Step 05: Fill in Last Name
+[06-11-2023 09:31:23.696 INFO PIM.Add_Employee] - PIM_01 - Step 06: Get value of Employee id
+[06-11-2023 09:31:23.765 INFO PIM.Add_Employee] - PIM_01 - Step 07: On Create Login Details toggle
