@@ -39,4 +39,17 @@ public class PageGeneratorManager {
     public static TimePageObject getTimePage(WebDriver driver){
         return new TimePageObject(driver);
     }
+    public static LoginPageObject getLoginPage(WebDriver driver){
+        return new LoginPageObject(driver);
+    }
+    public static EmployeeListPageObject getEmployeeListPage(WebDriver driver){
+        return new EmployeeListPageObject(driver);
+    }
+    public static AddEmployeePageObject getAddEmployeePage(WebDriver driver){
+        return new AddEmployeePageObject(driver);
+    }
+    public static PersionalDetailPageObject getPersionalDetailPage(WebDriver driver){
+        return new PersionalDetailPageObject(driver);
+    }
+
 }

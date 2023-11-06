@@ -2,10 +2,10 @@ package pageObjects;
 
 import org.openqa.selenium.WebDriver;
 
-public class MyInforPageObject extends SidePanelPageObject{
+public class AdminPageObject extends SidePanelPageObject{
     WebDriver driver;
 
-    public MyInforPageObject(WebDriver driver) {
+    public AdminPageObject(WebDriver driver) {
         super(driver);
         this.driver = driver;
     }

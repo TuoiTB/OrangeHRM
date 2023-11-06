@@ -14,9 +14,12 @@ public class DataFaker {
 	public String getFirstName() {
 		return faker.address().firstName();
 	}
+	public String getMiddleName() {
+		return faker.address().firstName();
+	}
 	
 	public String getLastName() {
-		return faker.address().lastName();
+		return faker.address().firstName();
 	}
 	
 	public String getCityName() {
@@ -30,7 +33,6 @@ public class DataFaker {
 	public String getZipCode() {
 		return faker.address().zipCode();
 	}
-	
 	public String getEmailAddress() {
 		return faker.internet().emailAddress();
 	}
