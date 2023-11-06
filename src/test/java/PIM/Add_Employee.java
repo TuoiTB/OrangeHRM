@@ -123,6 +123,9 @@ public class Add_Employee extends BaseTest {
 		verifyTrue(persionalDetailPage.isAvatarDisplayed());*/
 
 	}
+	public void PIM_02(){
+
+	}
 	
 
 	@AfterClass(alwaysRun = true)
