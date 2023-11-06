@@ -1,0 +1,26 @@
+[06-11-2023 10:24:53.185 INFO PIM.Add_Employee] - PIM_01 - Step 01: Open PIM link at menu
+[06-11-2023 10:24:57.290 INFO PIM.Add_Employee] - PIM_01 - Step 02: Click Add button
+[06-11-2023 10:24:58.931 INFO PIM.Add_Employee] - PIM_01 - Step 03: Fill in First Name
+[06-11-2023 10:24:59.460 INFO PIM.Add_Employee] - PIM_01 - Step 04: Fill in Middle Name
+[06-11-2023 10:24:59.640 INFO PIM.Add_Employee] - PIM_01 - Step 05: Fill in Last Name
+[06-11-2023 10:24:59.876 INFO PIM.Add_Employee] - PIM_01 - Step 06: Get value of Employee id
+[06-11-2023 10:24:59.955 INFO PIM.Add_Employee] - PIM_01 - Step 07: On Create Login Details toggle
+[06-11-2023 10:25:00.365 INFO PIM.Add_Employee] - PIM_01 - Step 08: Fill in User Name
+[06-11-2023 10:25:00.617 INFO PIM.Add_Employee] - PIM_01 - Step 09: Choose Status radio button
+[06-11-2023 10:25:00.746 INFO PIM.Add_Employee] - PIM_01 - Step 10: Fill in Password
+[06-11-2023 10:25:00.934 INFO PIM.Add_Employee] - PIM_01 - Step 11: Fill in Confirm Password
+[06-11-2023 10:25:01.110 INFO PIM.Add_Employee] - PIM_01 - Step 12: Upload Avatar and verify uploaded successed
+[06-11-2023 10:25:01.309 INFO PIM.Add_Employee] - ----------FAILED----------
+[06-11-2023 10:25:01.310 INFO PIM.Add_Employee] - PIM_01 - Step 13: Click Save button
+[06-11-2023 10:25:01.465 INFO PIM.Add_Employee] - PIM_01 - Step 14: Verify Toast message is displayed with content Successfully Saved
+[06-11-2023 10:25:03.710 INFO PIM.Add_Employee] - ----------PASSED----------
+[06-11-2023 10:25:03.710 INFO PIM.Add_Employee] - PIM_01 - Step 15: Verify openning Persional Detail Screen is true
+[06-11-2023 10:25:07.581 INFO PIM.Add_Employee] - ----------PASSED----------
+[06-11-2023 10:25:07.581 INFO PIM.Add_Employee] - PIM_01 - Step 16: Verify First Name is displayed.
+[06-11-2023 10:25:07.644 INFO PIM.Add_Employee] - ----------FAILED----------
+[06-11-2023 10:25:07.645 INFO PIM.Add_Employee] - PIM_01 - Step 17: Verify Middle Name is displayed.
+[06-11-2023 10:25:07.826 INFO PIM.Add_Employee] - ----------FAILED----------
+[06-11-2023 10:25:07.827 INFO PIM.Add_Employee] - PIM_01 - Step 18: Verify Last Name is displayed.
+[06-11-2023 10:25:07.913 INFO PIM.Add_Employee] - ----------FAILED----------
+[06-11-2023 10:25:07.913 INFO PIM.Add_Employee] - PIM_01 - Step 19: Verify Employee id is displayed.
+[06-11-2023 10:25:07.974 INFO PIM.Add_Employee] - ----------FAILED----------

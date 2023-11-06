@@ -1,0 +1,9 @@
+[06-11-2023 09:35:25.586 INFO PIM.Add_Employee] - PIM_01 - Step 01: Open PIM link at menu
+[06-11-2023 09:35:28.835 INFO PIM.Add_Employee] - PIM_01 - Step 02: Click Add button
+[06-11-2023 09:35:30.325 INFO PIM.Add_Employee] - PIM_01 - Step 03: Fill in First Name
+[06-11-2023 09:35:30.913 INFO PIM.Add_Employee] - PIM_01 - Step 04: Fill in Middle Name
+[06-11-2023 09:35:31.103 INFO PIM.Add_Employee] - PIM_01 - Step 05: Fill in Last Name
+[06-11-2023 09:35:31.279 INFO PIM.Add_Employee] - PIM_01 - Step 06: Get value of Employee id
+[06-11-2023 09:35:31.346 INFO PIM.Add_Employee] - PIM_01 - Step 07: On Create Login Details toggle
+[06-11-2023 09:35:31.714 INFO PIM.Add_Employee] - PIM_01 - Step 08: Fill in User Name
+[06-11-2023 09:35:31.965 INFO PIM.Add_Employee] - PIM_01 - Step 09: Choose Status radio button
