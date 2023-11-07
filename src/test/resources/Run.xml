@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite parallel="none" name="OrangeHRM - UI Automation">
-	<parameter name="url" value="http://localhost/orangehrm-5.5/web/index.php/auth/login" />
+    <parameter name="url" value="http://localhost/orangehrm-5.5/web/index.php/auth/login"/>
 
-	<listeners>
-		<listener class-name="commons.MethodListener" />
-		<listener class-name="reportConfig.AllureTestListener" />
-	</listeners>
+    <listeners>
+        <listener class-name="commons.MethodListener"/>
+        <listener class-name="reportConfig.AllureTestListener"/>
+    </listeners>
 
-	<test name="Run on Chrome" preserve-order="true">
-		<parameter name="browser" value="chrome" />
-		<classes>
-			<class
-				name="PIM.Infor_Employee" />
-		</classes>
-	</test>
+    <test name="Run on Chrome" preserve-order="true">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class
+                    name="PIM.Add_Employee_Screen"/>
+            <class
+                    name="PIM.Persional_Detail_Screen"/>
+        </classes>
+    </test>
 </suite>

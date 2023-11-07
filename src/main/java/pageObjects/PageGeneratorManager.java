@@ -1,6 +1,11 @@
 package pageObjects;
 
+import commons.DashBoardPageObject;
 import org.openqa.selenium.WebDriver;
+import pageObjects.MainMenu.*;
+import pageObjects.PIMMenu.AddEmployeePageObject;
+import pageObjects.PIMMenu.EmployeeListPageObject;
+import pageObjects.PIMMenu.PersionalDetailPageObject;
 
 public class PageGeneratorManager {
     public static AdminPageObject getAdminPage(WebDriver driver){
