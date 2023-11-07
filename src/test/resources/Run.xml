@@ -12,7 +12,7 @@
 		<parameter name="browser" value="chrome" />
 		<classes>
 			<class
-				name="PIM.Add_Employee" />
+				name="PIM.Infor_Employee" />
 		</classes>
 	</test>
 </suite>
