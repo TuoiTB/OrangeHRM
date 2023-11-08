@@ -2,6 +2,8 @@ package utitlities;
 
 import com.github.javafaker.Faker;
 
+import java.util.Date;
+
 public class DataFaker {
 	Faker faker;
 	public DataFaker() {
@@ -40,6 +42,9 @@ public class DataFaker {
 	public String getPassword() {
 		return faker.internet().password();
 	}
-	
+	public String getId(){
+		return faker.idNumber().valid();
+	}
+
 	
 }

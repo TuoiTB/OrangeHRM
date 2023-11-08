@@ -40,4 +40,66 @@ public class PersionalDetailPageObject extends BasePage {
         waitForElementVisible(driver,PersionalDetailPageUI.EMPLOYEE_TEXTBOX);
         return getElementAttribute(driver,PersionalDetailPageUI.EMPLOYEE_TEXTBOX,"value");
     }
+    public void clickCustomDropdownListByName(){
+        waitForElementVisible(driver, "//label[text()='Nationality']/parent::div/following-sibling::div//div[@class='oxd-select-text-input']");
+        selectItemInCustomDropdown(driver,"//label[text()='Nationality']/parent::div/following-sibling::div//div[@class='oxd-select-text-input']","//label[text()='Nationality']/parent::div/following-sibling::div//div[@role='listbox']","Afghan");
+        sleepInSecond(4);
+    }
+
+    public void enterToTextboxByName(String otherId, String otherId1) {
+    }
+
+    public void enterDateToTextboxByName(String licenseExpiryDate, String licenseExpiryDate1) {
+    }
+
+    public void chooseItemAtDropdownByName(String nationality, String afghan) {
+    }
+
+    public void chooseItemAtGenderDropdown(String female) {
+    }
+
+    public void clickToSaveButtonByTitle(String personalDetails) {
+    }
+
+    public boolean isToastMessageDisplayedByText(String successfullyUpdated) {
+        return false;
+    }
+
+    public boolean isDataPersionalDetailDisplayedByName(String s, String s1) {
+        return false;
+    }
+
+    public void clickToAddAtachment() {
+    }
+
+    public void uploadFile(String uploadFileName) {
+    }
+
+    public void EnterToComment(String commentNotes) {
+    }
+
+    public boolean isFileUploadedSuccessfully(String uploadFileName) {
+        return false;
+    }
+
+    public String getSizeOfFileUploadByFileName(String uploadFileName) {
+        return uploadFileName;
+    }
+
+    public boolean isDataAttachmentDisplayedByColumnName(String fileName, String uploadFileName) {
+        return false;
+    }
+
+    public void clickEditButtonByFileName(String uploadFileName) {
+    }
+
+    public void clickToDeleteByFileName(String uploadFileNameEdit) {
+    }
+
+    public void clickToYesDeleteButton() {
+    }
+
+    public boolean isDataAttachmentUndisplayedByColumnName(String fileName, String uploadFileNameEdit) {
+        return true;
+    }
 }
