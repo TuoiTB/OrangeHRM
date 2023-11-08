@@ -4,13 +4,7 @@ import java.time.Duration;
 import java.util.List;
 import java.util.Set;
 
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Cookie;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.Color;
 import org.openqa.selenium.support.ui.ExpectedCondition;
@@ -227,11 +221,11 @@ public class BasePage {
 		return new Select(getElement(driver, locator)).isMultiple();
 	}
 	
-	public void selectItemInCustomDropdown(WebDriver driver, String xpathParent, String xpathChild, String expectedText) {
-		getElement(driver, xpathParent).click();
+	public void selectItemInCustomDropdown(WebDriver driver, String xpathParent, String xpathChild, String expectedText, String...restParams) {
+		getElement(driver, getDynamicLocator(xpathParent, restParams)).click();
 		sleepInSecond(2);
 		List<WebElement> allItems = new WebDriverWait(driver, Duration.ofSeconds(longTimeout))
-				.until(ExpectedConditions.presenceOfAllElementsLocatedBy(getByLocator(xpathChild)));
+				.until(ExpectedConditions.presenceOfAllElementsLocatedBy(getByLocator(getDynamicLocator(xpathChild, restParams))));
 		for (WebElement tempElement : allItems) {
 
 			if (tempElement.getText().equals(expectedText)) {
@@ -244,7 +238,24 @@ public class BasePage {
 			}
 		}
 	}
-	
+
+	public void selectItemInCustomDropdown(WebDriver driver, String xpathParent, String xpathChild, String expectedText) {
+		getElement(driver, xpathParent).click();
+		sleepInSecond(2);
+		List<WebElement> allItems = new WebDriverWait(driver, Duration.ofSeconds(longTimeout))
+				.until(ExpectedConditions.presenceOfAllElementsLocatedBy(getByLocator(xpathChild)));
+		for (WebElement tempElement : allItems) {
+
+			if (tempElement.getText().equals(expectedText)) {
+
+				((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoViewIfNeeded(true);", tempElement);
+				sleepInSecond(5);
+
+				tempElement.click();
+				break;
+			}
+		}
+	}
 	
 	
 	
@@ -280,7 +291,11 @@ public class BasePage {
 	public int getListElementSize(WebDriver driver, String locator, String...restParams) {
 		return getListElement(driver, getDynamicLocator(locator, restParams)).size();
 	}
-	
+
+	/*public Dimension getSizeElementFile(WebDriver driver, String locator){
+		return getElement(driver, locator).getSize();
+	}*/
+
 	public void checkToCheckboxOrRadio(WebDriver driver, String locator) {
 		if (!isElementSelected(driver, locator)) {
 			clickToElement(driver, locator);

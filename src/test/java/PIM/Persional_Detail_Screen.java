@@ -35,7 +35,10 @@ public class Persional_Detail_Screen extends BaseTest {
 	private String dateOfBirth;
 	private String uploadFileNameEdit;
 	private String sizeFileUpload;
-	private String commentNotes = "Comment notes abc";
+	private String commentNotes;
+	private String nationalityChoose;
+	private String marital;
+
 	@Parameters({"browser","url"})
 	@BeforeClass
 	public void beforeClass(String browserName, String url) {
@@ -47,10 +50,13 @@ public class Persional_Detail_Screen extends BaseTest {
 		otherId = faker.getId();
 		password = "JctVn@1#TTT";
 		uploadFileName = "JCT.jpg";
-		licenseExpiryDate = "1/1/2032";
+		licenseExpiryDate = "2032-01-01";
 		driverLicenseNumber = "A123-233-44467";
-		dateOfBirth = "1/1/1999";
+		dateOfBirth = "1999-01-01";
 		uploadFileNameEdit = "DKT.jpg";
+		nationalityChoose = "Danish";
+		commentNotes = "Comment notes abc";
+		marital = "other";
 	}
 	@Description("TC_01")
 	@Story("PIM")
@@ -60,22 +66,22 @@ public class Persional_Detail_Screen extends BaseTest {
 		persionalDetailPage.enterToTextboxByName("Other Id", otherId);
 
 		log.info("Step 02: Fill in Driver's License Number");
-		persionalDetailPage.enterToTextboxByName("Driver's License Number", driverLicenseNumber);
+		persionalDetailPage.enterToTextboxByName("License Number", driverLicenseNumber);
 
 		log.info("Step 02: Fill in License Expiry Date");
-		persionalDetailPage.enterDateToTextboxByName("License Expiry Date", licenseExpiryDate);
+		persionalDetailPage.enterToTextboxByName("License Expiry Date", licenseExpiryDate);
 
 		log.info("Step 02: Fill in Date of Birth");
-		persionalDetailPage.enterDateToTextboxByName("Date of Birth", dateOfBirth);
+		persionalDetailPage.enterToTextboxByName("Date of Birth", dateOfBirth);
 
 		log.info("Step 02: Choose Nationality dropdown");
-		persionalDetailPage.chooseItemAtDropdownByName("Nationality","Afghan");
+		persionalDetailPage.chooseItemAtDropdownByName("Nationality",nationalityChoose);
 
 		log.info("Step 02: Choose Marital Status dropdown");
-		persionalDetailPage.chooseItemAtDropdownByName("Marital","Single");
+		persionalDetailPage.chooseItemAtDropdownByName("Marital",  marital);
 
 		log.info("Step 02: Choose Gender radiobutton");
-		persionalDetailPage.chooseItemAtGenderDropdown("Female");
+		persionalDetailPage.chooseItemAtGenderRadioButton("Female");
 
 		log.info("Step 02: Click Save button");
 		persionalDetailPage.clickToSaveButtonByTitle("Personal Details");
@@ -84,7 +90,10 @@ public class Persional_Detail_Screen extends BaseTest {
 		verifyTrue(persionalDetailPage.isToastMessageDisplayedByText("Successfully Updated"));
 
 		log.info("Step 02: Verify data is displayed");
-		verifyTrue(persionalDetailPage.isDataPersionalDetailDisplayedByName("",""));
+		verifyEquals(persionalDetailPage.getValueTextboxByName("Other Id"), otherId);
+		verifyEquals(persionalDetailPage.getValueTextboxByName("License Number"), driverLicenseNumber);
+		verifyEquals(persionalDetailPage.getValueTextboxByName("License Expiry Date"), licenseExpiryDate);
+		verifyEquals(persionalDetailPage.getValueTextboxByName("Date of Birth"), dateOfBirth);
 
 		log.info("Step 02: Click Add Attachment");
 		persionalDetailPage.clickToAddAtachment();
@@ -95,11 +104,8 @@ public class Persional_Detail_Screen extends BaseTest {
 		log.info("Step 02: Verify file is uploaded successfully");
 		verifyTrue(persionalDetailPage.isFileUploadedSuccessfully(uploadFileName));
 
-		log.info("Step 02: Get size of file upload");
-		sizeFileUpload = persionalDetailPage.getSizeOfFileUploadByFileName(uploadFileName);
-
 		log.info("Step 02: Fill in Comment");
-		persionalDetailPage.EnterToComment(commentNotes);
+		persionalDetailPage.enterToComment(commentNotes);
 
 		log.info("Step 02: Click Save button");
 		persionalDetailPage.clickToSaveButtonByTitle("Attachments");
@@ -120,11 +126,8 @@ public class Persional_Detail_Screen extends BaseTest {
 		log.info("Step 02: Verify file is uploaded successfully");
 		verifyTrue(persionalDetailPage.isFileUploadedSuccessfully(uploadFileNameEdit));
 
-		log.info("Step 02: Get size of file upload");
-		sizeFileUpload = persionalDetailPage.getSizeOfFileUploadByFileName(uploadFileNameEdit);
-
 		log.info("Step 02: Fill in Comment");
-		persionalDetailPage.EnterToComment(commentNotes);
+		persionalDetailPage.enterToComment(commentNotes);
 
 		log.info("Step 02: Click Save button");
 		persionalDetailPage.clickToSaveButtonByTitle("Attachments");
