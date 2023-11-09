@@ -12,9 +12,10 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import pageObjects.*;
-import pageObjects.PIMMenu.AddEmployeePageObject;
-import pageObjects.PIMMenu.EmployeeListPageObject;
-import pageObjects.PIMMenu.PersionalDetailPageObject;
+import pageObjects.PIM.AddEmployeePageObject;
+import pageObjects.PIM.EmployeeListPageObject;
+import pageObjects.PIM.PersionalDetailPageObject;
+import pageObjects.common.LoginPageObject;
 import utitlities.DataFaker;
 
 @Epic("Account")

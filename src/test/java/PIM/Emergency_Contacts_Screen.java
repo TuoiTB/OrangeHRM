@@ -2,19 +2,15 @@ package PIM;
 
 import commons.BaseTest;
 import commons.DashBoardPageObject;
-import io.qameta.allure.Description;
-import io.qameta.allure.Epic;
-import io.qameta.allure.Feature;
-import io.qameta.allure.Story;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
-import org.testng.annotations.Test;
 import pageObjects.*;
-import pageObjects.PIMMenu.AddEmployeePageObject;
-import pageObjects.PIMMenu.EmployeeListPageObject;
-import pageObjects.PIMMenu.PersionalDetailPageObject;
+import pageObjects.PIM.AddEmployeePageObject;
+import pageObjects.PIM.EmployeeListPageObject;
+import pageObjects.PIM.PersionalDetailPageObject;
+import pageObjects.common.LoginPageObject;
 import utitlities.DataFaker;
 
 public class Emergency_Contacts_Screen extends BaseTest{

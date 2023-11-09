@@ -1,5 +1,6 @@
 package commons;
 
+import java.io.File;
 import java.time.Duration;
 import java.util.List;
 import java.util.Set;
@@ -170,6 +171,10 @@ public class BasePage {
 	public WebElement getElement(WebDriver driver, String locator) {
 		return driver.findElement(getByLocator(locator));
 	}
+
+	public WebElement getElement(WebDriver driver, String locator, String...restParams) {
+		return driver.findElement(getByLocator(getDynamicLocator(locator, restParams)));
+	}
 	
 	public List<WebElement> getListElement(WebDriver driver, String locator) {
 		return driver.findElements(getByLocator(locator));
@@ -291,10 +296,6 @@ public class BasePage {
 	public int getListElementSize(WebDriver driver, String locator, String...restParams) {
 		return getListElement(driver, getDynamicLocator(locator, restParams)).size();
 	}
-
-	/*public Dimension getSizeElementFile(WebDriver driver, String locator){
-		return getElement(driver, locator).getSize();
-	}*/
 
 	public void checkToCheckboxOrRadio(WebDriver driver, String locator) {
 		if (!isElementSelected(driver, locator)) {
@@ -449,6 +450,10 @@ public class BasePage {
 
 	public void scrollToElementOnTop(WebDriver driver, String locator) {
 		((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView(true);", getElement(driver, locator));
+	}
+
+	public void scrollToElementOnTop(WebDriver driver, String locator, String...restParams) {
+		((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView(true);", getElement(driver, getDynamicLocator(locator, restParams)));
 	}
 
 	public void scrollToElementOnDown(WebDriver driver, String locator) {

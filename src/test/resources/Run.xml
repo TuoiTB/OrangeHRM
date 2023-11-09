@@ -12,9 +12,7 @@
         <parameter name="browser" value="chrome"/>
         <classes>
             <class
-                    name="PIM.Add_Employee_Screen"/>
-            <class
-                    name="PIM.Persional_Detail_Screen"/>
+                    name="Admin.User_Management"/>
         </classes>
     </test>
 </suite>

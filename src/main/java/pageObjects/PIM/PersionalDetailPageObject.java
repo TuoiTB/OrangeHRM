@@ -1,4 +1,4 @@
-package pageObjects.PIMMenu;
+package pageObjects.PIM;
 
 import commons.BasePage;
 import org.openqa.selenium.WebDriver;
@@ -43,11 +43,12 @@ public class PersionalDetailPageObject extends BasePage {
 
     public void enterToTextboxByName(String textboxName, String valueToSend) {
         waitForElementVisible(driver, PersionalDetailPageUI.ENTER_TO_TEXTBOX_BY_NAME, textboxName);
+        getElement(driver, PersionalDetailPageUI.ENTER_TO_TEXTBOX_BY_NAME, textboxName).click();
         sendkeyToElement(driver, PersionalDetailPageUI.ENTER_TO_TEXTBOX_BY_NAME, valueToSend, textboxName);
     }
 
     public void chooseItemAtDropdownByName(String dropdownName, String expectedText) {
-        waitForElementVisible(driver, "//label[text()='Nationality']/parent::div/following-sibling::div//div[@class='oxd-select-text-input']");
+        waitForElementVisible(driver, PersionalDetailPageUI.PARENT_DROPDOWN_BY_NAME, dropdownName);
         selectItemInCustomDropdown(driver, PersionalDetailPageUI.PARENT_DROPDOWN_BY_NAME, PersionalDetailPageUI.CHILD_DROPDOWN_BY_NAME, expectedText, dropdownName);
         sleepInSecond(2);
     }
@@ -58,6 +59,7 @@ public class PersionalDetailPageObject extends BasePage {
     }
 
     public void clickToSaveButtonByTitle(String titleName) {
+        scrollToElementOnTop(driver, PersionalDetailPageUI.SAVE_BUTTON_BY_TITLE, titleName);
         waitForElementClickable(driver, PersionalDetailPageUI.SAVE_BUTTON_BY_TITLE, titleName);
         clickToElement(driver, PersionalDetailPageUI.SAVE_BUTTON_BY_TITLE, titleName);
     }
@@ -96,20 +98,32 @@ public class PersionalDetailPageObject extends BasePage {
         return getListElementSize();
     }*/
 
-    public boolean isDataAttachmentDisplayedByColumnName(String fileName, String uploadFileName) {
-        return false;
+    public boolean isDataAttachmentDisplayedByName(String fileName, String comment, String fileSize) {
+        waitForElementVisible(driver, PersionalDetailPageUI.DATA_ATTACHMENT_BY_NAME, fileName, comment, fileSize);
+        return isElementDisplayed(driver, PersionalDetailPageUI.DATA_ATTACHMENT_BY_NAME, fileName, comment, fileSize);
     }
 
     public void clickEditButtonByFileName(String uploadFileName) {
+        waitForElementClickable(driver, PersionalDetailPageUI.EDIT_ICON_BY_FILE_NAME, uploadFileName);
+        clickToElement(driver, PersionalDetailPageUI.EDIT_ICON_BY_FILE_NAME, uploadFileName);
     }
 
-    public void clickToDeleteByFileName(String uploadFileNameEdit) {
+    public void clickToDeleteByFileName(String uploadFileName) {
+        waitForElementClickable(driver, PersionalDetailPageUI.DELETE_ICON_BY_FILE_NAME, uploadFileName);
+        clickToElement(driver, PersionalDetailPageUI.DELETE_ICON_BY_FILE_NAME, uploadFileName);
     }
 
     public void clickToYesDeleteButton() {
+        waitForElementClickable(driver, PersionalDetailPageUI.YES_DELETE_BUTTON);
+        clickToElement(driver, PersionalDetailPageUI.YES_DELETE_BUTTON);
     }
 
-    public boolean isDataAttachmentUndisplayedByColumnName(String fileName, String uploadFileNameEdit) {
-        return true;
+    public boolean isDataAttachmentUnDisplayedByName(String fileName, String comment, String fileSize) {
+        waitForElementVisible(driver, PersionalDetailPageUI.DATA_ATTACHMENT_BY_NAME, fileName, comment, fileSize);
+        return isElementUndisplayed(driver, PersionalDetailPageUI.DATA_ATTACHMENT_BY_NAME, fileName, comment, fileSize);
     }
+    public void waitInvisibleSpinnerIcon(){
+        waitForElementInvisible(driver, PersionalDetailPageUI.SPINNER_ICON);
+    }
+
 }

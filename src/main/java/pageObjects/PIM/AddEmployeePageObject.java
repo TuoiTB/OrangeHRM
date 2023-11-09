@@ -1,4 +1,4 @@
-package pageObjects.PIMMenu;
+package pageObjects.PIM;
 
 import commons.BasePage;
 import org.openqa.selenium.WebDriver;
