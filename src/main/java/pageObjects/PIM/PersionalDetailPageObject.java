@@ -48,7 +48,7 @@ public class PersionalDetailPageObject extends BasePage {
     }
 
     public void chooseItemAtDropdownByName(String dropdownName, String expectedText) {
-        waitForElementVisible(driver, PersionalDetailPageUI.PARENT_DROPDOWN_BY_NAME, dropdownName);
+        waitForElementClickable(driver, PersionalDetailPageUI.PARENT_DROPDOWN_BY_NAME, dropdownName);
         selectItemInCustomDropdown(driver, PersionalDetailPageUI.PARENT_DROPDOWN_BY_NAME, PersionalDetailPageUI.CHILD_DROPDOWN_BY_NAME, expectedText, dropdownName);
         sleepInSecond(2);
     }

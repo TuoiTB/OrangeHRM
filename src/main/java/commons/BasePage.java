@@ -246,7 +246,7 @@ public class BasePage {
 
 	public void selectItemInCustomDropdown(WebDriver driver, String xpathParent, String xpathChild, String expectedText) {
 		getElement(driver, xpathParent).click();
-		sleepInSecond(2);
+		//sleepInSecond(2);
 		List<WebElement> allItems = new WebDriverWait(driver, Duration.ofSeconds(longTimeout))
 				.until(ExpectedConditions.presenceOfAllElementsLocatedBy(getByLocator(xpathChild)));
 		for (WebElement tempElement : allItems) {
@@ -254,7 +254,7 @@ public class BasePage {
 			if (tempElement.getText().equals(expectedText)) {
 
 				((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoViewIfNeeded(true);", tempElement);
-				sleepInSecond(5);
+			//	sleepInSecond(5);
 
 				tempElement.click();
 				break;

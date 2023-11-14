@@ -2,6 +2,7 @@ package pageObjects;
 
 import commons.DashBoardPageObject;
 import org.openqa.selenium.WebDriver;
+import pageObjects.Admin.AddUserPageObject;
 import pageObjects.Admin.UserManagementListPageObject;
 import pageObjects.MainMenu.*;
 import pageObjects.PIM.AddEmployeePageObject;
@@ -60,6 +61,9 @@ public class PageGeneratorManager {
     }
     public static UserManagementListPageObject getUserManagementPage(WebDriver driver){
         return new UserManagementListPageObject(driver);
+    }
+    public static AddUserPageObject getAddUserPage(WebDriver driver){
+        return new AddUserPageObject(driver);
     }
 
 }
