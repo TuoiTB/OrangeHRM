@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite parallel="none" name="OrangeHRM - UI Automation">
-    <parameter name="url" value="http://localhost/orangehrm-5.5/web/index.php/auth/login"/>
+    <parameter name="url" value="https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"/>
 
     <listeners>
         <listener class-name="commons.MethodListener"/>

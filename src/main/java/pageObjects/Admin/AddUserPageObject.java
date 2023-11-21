@@ -37,7 +37,6 @@ public class AddUserPageObject extends BasePage {
         for (WebElement tempElement : allItems) {
             if (tempElement.getText().equals(expectedText)) {
                 ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoViewIfNeeded(true);", tempElement);
-                //	sleepInSecond(5);
                 tempElement.click();
                 break;
             }
@@ -59,7 +58,7 @@ public class AddUserPageObject extends BasePage {
         clickToElement(driver, AddUserPageUI.SAVE_BUTTON);
     }
 
-    public boolean isToastMessageDisplayed() {
+    public boolean isSavedToastMessageDisplayed() {
         waitForElementVisible(driver, AddUserPageUI.TOAST_MESSAGE);
         return isElementDisplayed(driver, AddUserPageUI.TOAST_MESSAGE);
     }
