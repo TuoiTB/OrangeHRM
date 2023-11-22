@@ -29,18 +29,22 @@ public class AddUserPageObject extends BasePage {
     public void enterToSearchEmployeeTextbox(String valueToSend) {
         waitForElementVisible(driver, AddUserPageUI.EMPLOYEE_NAME_SEARCH_TEXTBOX);
         sendkeyToElement(driver, AddUserPageUI.EMPLOYEE_NAME_SEARCH_TEXTBOX, valueToSend);
+        waitForElementInvisible(driver, AddUserPageUI.EMPLOYEE_SEARCHING_ICON);
+       //waitForElementVisible(driver, AddUserPageUI.EMPLOYEE_FIRST_OPTION);
     }
 
     public void chooseEmployeeNameAtDropdown(String expectedText) {
         List<WebElement> allItems = new WebDriverWait(driver, Duration.ofSeconds(GlobalConstants.LONG_TIMEOUT))
                 .until(ExpectedConditions.presenceOfAllElementsLocatedBy(getByLocator(AddUserPageUI.EMPLOYEE_NAME_DROPDOWN)));
-        for (WebElement tempElement : allItems) {
+        allItems.get(0).click();
+       /* for (WebElement tempElement : allItems) {
+
             if (tempElement.getText().equals(expectedText)) {
                 ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoViewIfNeeded(true);", tempElement);
                 tempElement.click();
                 break;
             }
-        }
+        }*/
     }
 
     public void chooseStatusDropdown(String expectedText) {

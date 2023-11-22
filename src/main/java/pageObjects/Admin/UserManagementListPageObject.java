@@ -26,6 +26,7 @@ public class UserManagementListPageObject extends BasePage {
 
     public void enterToUserNameSearchTextbox(String userName) {
         waitForElementVisible(driver, UserManagementListPageUI.USER_NAME_SEARCH_TEXTBOX);
+        clickToElement(driver, UserManagementListPageUI.USER_NAME_SEARCH_TEXTBOX);
         sendkeyToElement(driver, UserManagementListPageUI.USER_NAME_SEARCH_TEXTBOX, userName);
     }
 

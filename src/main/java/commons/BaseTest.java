@@ -3,12 +3,14 @@ package commons;
 import java.io.File;
 import java.io.IOException;
 import java.time.Duration;
+import java.util.HashMap;
 import java.util.Random;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
@@ -40,12 +42,11 @@ public class BaseTest {
         switch (browserList) {
 
             case CHROME:
-                //System.setProperty("webdriver.chrome.driver", projectPath + "\\browserDrivers\\chromedriver.exe");
                 driver = new ChromeDriver();
-
-                //version 5.x
-                //Tự tải chromedriver tương ứng với chrome browser, sau đó khởi tạo driver lên
-                //driver = WebDriverManager.chromedriver().create();
+                HashMap chromePrefs = new HashMap();
+                ChromeOptions options = new ChromeOptions();
+                options.setExperimentalOption("prefs", chromePrefs);
+                options.addArguments("--lang=en");
                 break;
 
             case FIREFOX:

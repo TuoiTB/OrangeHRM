@@ -36,13 +36,13 @@ public class User_Management extends BaseTest {
         password = "JctVn@1#TTT";
         userRole = "Admin";
         status = "Disabled";
-        employeeName = "Tuoituoi";
+        employeeName = "Rebecca";
 
         userNameEdit = faker.getEmailAddress();
         passwordEdit = "JctVn@1#TTT";
         userRoleEdit = "ESS";
         statusEdit = "Enabled";
-        employeeNameEdit = "Tuoituoi";
+        employeeNameEdit = "Rebecca";
     }
     @Test
     public void USER_01_Add_User() {
@@ -74,6 +74,7 @@ public class User_Management extends BaseTest {
         log.info("USER_01 - Step 09: Verify toast message is displayed");
         verifyTrue(addUserPage.isSavedToastMessageDisplayed());
     }
+    @Test
     public void USER_02_Search_User() {
         userManagementListPage = PageGeneratorManager.getUserManagementPage(driver);
         log.info("USER_02 - Step : Enter to UserName search textbox");
@@ -86,7 +87,7 @@ public class User_Management extends BaseTest {
         verifyTrue(userManagementListPage.isResultSearchDisplayed(userName, userRole, employeeName, status));
 
     }
-
+    @Test
     public void USER_03_Edit_User() {
         log.info("USER_03 - Step : Click Edit button");
         editUserPage = userManagementListPage.clickEditButton(userNameEdit);
@@ -119,6 +120,7 @@ public class User_Management extends BaseTest {
         log.info("USER_01 - Step 09: Verify toast message is displayed");
         verifyTrue(editUserPage.isUpdatedToastMessageDisplayed());
     }
+    @Test
     public void USER_04_Delete_User() {
         userManagementListPage = PageGeneratorManager.getUserManagementPage(driver);
         log.info("USER_04 - Step : Enter to UserName search textbox");
